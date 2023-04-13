@@ -48,9 +48,9 @@ services:
     depends_on:
       api:
         condition: service_started
-#    volumes:
-#       - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf
-#       - django_static:/usr/share/nginx/html/static
+    volumes:
+       - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf #пробрасыаем тот путь, откуда мы его забрали
+       - ./static:/usr/share/nginx/html/static #сюда мы положим статику
 
 volumes:
   diploma_pg_data_1: #здесь мы создаем том
